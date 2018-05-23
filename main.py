@@ -7,6 +7,7 @@ import nltk
 import threading
 import random
 
+
 LANG = 'fr'
 DIR = "./assets/sounds/"
 nltk.download('words')
@@ -18,13 +19,19 @@ nltk.download('punkt')
 GREETING_KEYWORDS = ("hello", "salut", "vas-tu", "ça va", "ça se passe",)
 GREETING_RESPONSES = ["'super mec", "mouai", "ça va, merci!", "Parfait"]
 
+
 def check_for_greeting(sentence):
     for word in sentence.words:
         if word.lower() in GREETING_KEYWORDS:
             return random.choice(GREETING_RESPONSES)
 
+
 def listen():
     while 1:
+        timeout = time.time() + 30
+
+        if time.time() > timeout:
+            break
         r = sr.Recognizer()
         try:
             sr.Microphone()
@@ -35,12 +42,14 @@ def listen():
             if audio != None:
                 recog = r.recognize_google(audio, language=LANG)
                 print(recog)
-                person_name = get_name(recog)
-                play_sounds_with_gtts("Salut, " + str(person_name))
+                return recog
+                #person_name = get_name(recog)
+                #play_sounds_with_gtts("Salut, " + str(person_name))
 
         except Exception as err:
             time.sleep(1)
             print(err)
+
 
 def play_sounds_with_gtts(m_text):
     current_time = datetime.datetime.now().time()
@@ -50,6 +59,7 @@ def play_sounds_with_gtts(m_text):
     pygame.mixer.music.load(sound_file_name)
     pygame.mixer.music.play()
 
+
 def get_name(sentence):
     for sent in nltk.sent_tokenize(sentence):
         for chunk in nltk.ne_chunk(nltk.pos_tag(nltk.word_tokenize(sent))):
@@ -57,6 +67,11 @@ def get_name(sentence):
                 if chunk.label() == "PERSON":
                     name = ' '.join(c[0] for c in chunk)
                     return name
+
+def welcome_message():
+    # say hello
+    hello_text = "Bonjour, je m'appelle Mehdi, et vous ?"
+    play_sounds_with_gtts(hello_text)
 
 def main():
     # Initialise screen
@@ -78,9 +93,7 @@ def main():
     robot_face = pygame.transform.scale(robot_face, (750, 750))
     screen.blit(robot_face, (0, 0))
 
-    # say hello
-    hello_text = "Bonjour, je m'appelle Mehdi, et vous ?"
-    play_sounds_with_gtts(hello_text)
+    welcome_message()
 
     # Listen thread
     listen_thread = threading.Thread(target=listen)
@@ -88,11 +101,28 @@ def main():
 
     # Event loop
     while 1:
+        # si le capteur détecte quelque chose:
+            # welcome_message()
+
         time.sleep(0.1)
         pygame.display.flip()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+            #if event.type == pygame.K_9:
+                #welcome
+                #listen
+                #for question in tableau_des_questions:
+                    # play sound question
+                    # listen
+                    #  attente:
+                    #   si temps d'attente
+                    # envoyer à l'api
+
+                    # if au revoir:
+                    #   break
+
+        #when thread return do something
 
 
 if __name__ == '__main__':
