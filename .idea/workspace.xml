@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1435a81-038c-49d1-8ca7-4c24a98167ca" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/robot_prj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/robot_prj.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -18,25 +17,17 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="104" column="19" lean-forward="true" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
+            <state relative-caret-position="323">
+              <caret line="83" column="106" lean-forward="true" selection-start-line="83" selection-start-column="106" selection-end-line="83" selection-end-column="106" />
               <folding>
                 <element signature="e#179#203#0" />
                 <element signature="e#970#1785#0" />
                 <element signature="e#1826#2222#0" />
-                <element signature="e#2252#2544#0" />
+                <element signature="e#2573#2672#0" />
                 <element signature="e#2701#2782#0" />
-                <element signature="e#4714#4835#0" />
+                <element signature="e#3492#4054#0" />
+                <element signature="e#3653#3963#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_find_list.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_find_list.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -286,6 +277,17 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>38</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -295,9 +297,10 @@
             <element signature="e#179#203#0" />
             <element signature="e#970#1785#0" />
             <element signature="e#1826#2222#0" />
-            <element signature="e#2252#2544#0" />
+            <element signature="e#2573#2672#0" />
             <element signature="e#2701#2782#0" />
-            <element signature="e#4714#4835#0" />
+            <element signature="e#3492#4054#0" />
+            <element signature="e#3653#3963#0" />
           </folding>
         </state>
       </provider>
@@ -317,9 +320,10 @@
             <element signature="e#179#203#0" />
             <element signature="e#970#1785#0" />
             <element signature="e#1826#2222#0" />
-            <element signature="e#2252#2544#0" />
+            <element signature="e#2573#2672#0" />
             <element signature="e#2701#2782#0" />
-            <element signature="e#4714#4835#0" />
+            <element signature="e#3492#4054#0" />
+            <element signature="e#3653#3963#0" />
           </folding>
         </state>
       </provider>
@@ -339,9 +343,10 @@
             <element signature="e#179#203#0" />
             <element signature="e#970#1785#0" />
             <element signature="e#1826#2222#0" />
-            <element signature="e#2252#2544#0" />
+            <element signature="e#2573#2672#0" />
             <element signature="e#2701#2782#0" />
-            <element signature="e#4714#4835#0" />
+            <element signature="e#3492#4054#0" />
+            <element signature="e#3653#3963#0" />
           </folding>
         </state>
       </provider>
@@ -368,9 +373,10 @@
             <element signature="e#179#203#0" />
             <element signature="e#970#1785#0" />
             <element signature="e#1826#2222#0" />
-            <element signature="e#2252#2544#0" />
+            <element signature="e#2573#2672#0" />
             <element signature="e#2701#2782#0" />
-            <element signature="e#4714#4835#0" />
+            <element signature="e#3492#4054#0" />
+            <element signature="e#3653#3963#0" />
           </folding>
         </state>
       </provider>
@@ -397,9 +403,10 @@
             <element signature="e#179#203#0" />
             <element signature="e#970#1785#0" />
             <element signature="e#1826#2222#0" />
-            <element signature="e#2252#2544#0" />
+            <element signature="e#2573#2672#0" />
             <element signature="e#2701#2782#0" />
-            <element signature="e#4714#4835#0" />
+            <element signature="e#3492#4054#0" />
+            <element signature="e#3653#3963#0" />
           </folding>
         </state>
       </provider>
@@ -413,9 +420,10 @@
             <element signature="e#179#203#0" />
             <element signature="e#970#1785#0" />
             <element signature="e#1826#2222#0" />
-            <element signature="e#2252#2544#0" />
+            <element signature="e#2573#2672#0" />
             <element signature="e#2701#2782#0" />
-            <element signature="e#4714#4835#0" />
+            <element signature="e#3492#4054#0" />
+            <element signature="e#3653#3963#0" />
           </folding>
         </state>
       </provider>
@@ -435,9 +443,10 @@
             <element signature="e#179#203#0" />
             <element signature="e#970#1785#0" />
             <element signature="e#1826#2222#0" />
-            <element signature="e#2252#2544#0" />
+            <element signature="e#2573#2672#0" />
             <element signature="e#2701#2782#0" />
-            <element signature="e#4714#4835#0" />
+            <element signature="e#3492#4054#0" />
+            <element signature="e#3653#3963#0" />
           </folding>
         </state>
       </provider>
@@ -545,15 +554,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="104" column="19" lean-forward="true" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
+        <state relative-caret-position="323">
+          <caret line="83" column="106" lean-forward="true" selection-start-line="83" selection-start-column="106" selection-end-line="83" selection-end-column="106" />
           <folding>
             <element signature="e#179#203#0" />
             <element signature="e#970#1785#0" />
             <element signature="e#1826#2222#0" />
-            <element signature="e#2252#2544#0" />
+            <element signature="e#2573#2672#0" />
             <element signature="e#2701#2782#0" />
-            <element signature="e#4714#4835#0" />
+            <element signature="e#3492#4054#0" />
+            <element signature="e#3653#3963#0" />
           </folding>
         </state>
       </provider>
