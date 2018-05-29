@@ -24,15 +24,8 @@ liste_questions = ["Avez-vous aimé votre déjeuner?", "Le service était-il rap
 liste_de_mots_clefs_pos = ["bien", "bon", "parfait", "impeccable", "super", "suffisant", "rapide"]
 liste_de_mots_clefs_neg = ["mal", "terrible", "dégueulasse", "infecte", "lent", "long"]
 negation = "pas"
-assurance = ["très","trop"]
-Jauge = compteur = 0
-last_val = 0
-connotation_finale = 0
-
-# def check_for_greeting(sentence):
-#     for word in sentence.words:
-#         if word.lower() in GREETING_KEYWORDS:
-#             return random.choice(GREETING_RESPONSES)
+assurance = "très"
+Jauge = compteur = last_val = connotation_finale = connotation_totale = 0
 
 
 def listen():
@@ -74,14 +67,16 @@ def goodbye_message():
 
 def find_connotation():
     enreg = listen()
+    # enreg = "C'était très bon" #pour simuler des tests rapidement
     compteur = val = val_inter = 0
     while compteur < len(liste_de_mots_clefs_pos): #Parcourir tous les mots-clé
         if enreg.find(liste_de_mots_clefs_pos[compteur]) > 0: #Si le mot-clé est trouvé dans la phrase
+            debut_mot_cle_pos = enreg.find(liste_de_mots_clefs_pos[compteur])
             val = val + 1
-            if enreg.find(negation) > 0: #Si le mot "pas" est trouvé
+            if enreg.find(negation, debut_mot_cle_pos-5, debut_mot_cle_pos) > 0: #Si le mot "pas" est trouvé juste avant le mot-clé
                 val = -1 * val #On inverse le résultat obtenu (si positif --> négatif, et vice versa)
-            if enreg.find(assurance) > 0:  # Si le mot "pas" est trouvé
-                val = 2 * val #On accentue le score dans le cas où l'utilisateur utilise "très" ou "trop" 
+            if enreg.find(assurance, debut_mot_cle_pos-5, debut_mot_cle_pos) > 0:  # Si le mot "très", "trop" est trouvé
+                val = 2 * val #On accentue le score dans le cas où l'utilisateur utilise "très" ou "trop"
             val_inter = val_inter + val
         compteur = compteur + 1 #On passe au mot-clé suivant
     compteur = 0
@@ -90,7 +85,7 @@ def find_connotation():
             val = val - 1
         compteur = compteur + 1
         last_val = val
-    # print("Connotation = ", last_val)
+    print("Connotation = ", last_val)
     return last_val
 
 def init_interface():
@@ -113,13 +108,13 @@ def init_interface():
     screen.blit(robot_face, (0, 0))
 
 def poser_les_questions():
-    global connotation_finale
+    global connotation_totale
     for question in liste_questions:
         play_sounds_with_gtts(question)
         time.sleep(1)
         connotation_finale = find_connotation()
-        connotation_finale += connotation_finale
-    return connotation_finale
+        connotation_totale = connotation_totale + connotation_finale
+    return connotation_totale
 
 def main():
     # global connotation_finale
@@ -135,11 +130,8 @@ def main():
             if event.type == pygame.KEYDOWN:
                 print("Question...")
                 poser_les_questions()
-                print("Connotation = ", connotation_finale)
+                print("Connotation totale = ", connotation_totale)
                 goodbye_message()
-
-
-
 
 if __name__ == '__main__':
     main()
